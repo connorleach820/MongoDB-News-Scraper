@@ -1,5 +1,3 @@
-import { truncate } from "fs";
-
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
@@ -21,7 +19,7 @@ var ArticleSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Note"
     }
-    
+
 });
 
 var Article = mongoose.model("Article", ArticleSchema);
