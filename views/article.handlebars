@@ -6,23 +6,23 @@
     <a href="{{article.link}}"><h2>{{article.title}}</h2></a>
     <p>{{article.summary}}</p>
 
-    <form action="{{article.id}}/comment/create" method="POST">
-        <input type="text" name= "user" placeholder="Name" />
+    <form action="{{article.id}}/note/create" method="POST">
+        <input type="text" name= "title" placeholder="Name" />
         <br/>
-        <textarea name="body" rows="2" placeholder="Write a comment!"></textarea>
+        <textarea name="body" rows="2" placeholder="Write a note!"></textarea>
         <br/>
-        <input type="submit" class="btn btn-default" value="Post comment" />
+        <input type="submit" class="btn btn-default" value="Post note" />
     </form>
     
-    {{#if article.comments}}
+    {{#if article.notes}}
     <ul>
-      {{#each article.comments}}
+      {{#each article.notes}}
         <li>
           {{this.user}}
           <br/>
           {{this.body}}
           <br/>
-          <form action="comment/{{this.id}}/delete" method="POST">
+          <form action="note/{{this.id}}/delete" method="POST">
             <p>{{article.id}}</p>
             <input type="submit" class="btn btn-danger" data-id="{{this.id}}" value="Delete">
           </form>
