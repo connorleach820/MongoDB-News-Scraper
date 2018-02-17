@@ -5,7 +5,8 @@ var request = require("request");
 var cheerio = require("cheerio");
 var path = require("path");
 
-var db = require("./models");
+var Article = require('./models/Article.js');
+var Notet = require('./models/Note.js');
 
 var PORT = 3000;
 
@@ -131,8 +132,8 @@ router.post('/articles/note/:id2/delete', function(req, res) {
 });
 
 
-app.listen(port, function() {
-  console.log('App listening on PORT: ' + port);
+app.listen(PORT, function() {
+  console.log('App listening on PORT: ' + PORT);
 });
 
 
